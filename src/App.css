@@ -1,0 +1,173 @@
+.App {
+  /* text-align: center; */
+  height: 100vh;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.listPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.pageHeader {
+  height: 100px;
+  background-color: #24292e;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* color: hsla(0, 0%, 100%, 0.7); */
+  width: 100%;
+}
+
+.searchSection {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputContainer {
+  height: 44px;
+  border-radius: 22px;
+  border: 1px solid #dfe1e5;
+  width: 480px;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+}
+.inputContainer:hover {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+}
+.searchInput {
+  height: 34px;
+  width: 411px;
+  border: none;
+  padding: 5px 49px 5px 20px;
+  font-size: 16px;
+}
+input:focus {
+  outline: none;
+}
+.searchBtn {
+  position: absolute;
+  height: 44px;
+  width: 124px;
+  border-radius: 22px;
+  top: 0;
+  right: -80px;
+  background: url(https://cdn1.iconfinder.com/data/icons/web-and-mobile-ui-outline-icon-kit/512/UI_Icons_2-01-512.png)
+    no-repeat;
+  background-size: 44px 44px;
+  background-position: left center;
+  padding-left: 44px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  transition: 0.4s all ease;
+  cursor: pointer;
+}
+.searchBtn:hover {
+  transform: translateX(-79px);
+}
+
+.listSection {
+  flex: 1;
+  overflow: hidden;
+  width: 100%;
+}
+
+.usersList {
+  margin: 0 auto;
+  padding: 0 10px;
+  height: 100%;
+  overflow: auto;
+}
+.user {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5da;
+  width: 500px;
+  border-radius: 4px;
+  padding: 20px 30px;
+  margin: 0 auto 16px;
+  box-shadow: 0 1px 4px 0 rgba(33, 133, 208, 0.2);
+}
+.user:hover {
+  cursor: pointer;
+}
+.user .userAvatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.user .userName {
+  margin: 0;
+}
+.showMorebtnContainer {
+  display: flex;
+  justify-content: center;
+}
+.showMoreBtn {
+  width: 320px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #2185d0;
+  border: 1px dashed#2185d0;
+  margin: 0 auto 50px;
+}
+
+.header.error {
+  width: 100vw;
+  height: 25vw;
+  /* background-image: url(/assets/github404.png); */
+  background-size: cover;
+}
+
+.backBtn {
+  height: 44px;
+  width: 124px;
+  border-radius: 22px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.partDetails {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  padding: 60px;
+  margin: 0 auto;
+}
+.partDetailsAvatar {
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+  margin-right: 50px;
+}
+.usernameTitle {
+  margin-top: 0;
+}
+
+.labelField {
+  margin-bottom: 6px;
+}
+.labelField .label {
+  margin-right: 10px;
+}
+
+.dropzone {
+  background-color: aquamarine;
+  height: 50px;
+}
