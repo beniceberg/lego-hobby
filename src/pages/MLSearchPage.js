@@ -2,20 +2,15 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { getGithubUsersList, getNextListPage, getProductDetails } from "../_actions";
+import { getNextListPage, getProductDetails } from "../_actions";
 import { getUsersList, getSearch, getUsersListSize } from "../_selectors";
 
-import Search from "../components/Search";
 import UsersList from "../components/UsersList";
 import NoSearchResults from "../components/NoSearchResults";
-import MyDropzone from "../components/UploadImage";
 import UploadContent from "../components/UploadContent";
+import Camera from "../components/Camera";
 
 class MLSearchPage extends Component {
-  doOnSearch = picture => {
-    this.props.dispatch(getGithubUsersList(picture));
-  };
-
   doUserClick = username => {
     const { history } = this.props;
     history.push(`/${username}/details`);
@@ -35,24 +30,13 @@ class MLSearchPage extends Component {
     return (
       <div className="listPage">
         <header className="pageHeader">
-          <h1 className="title">Github user list</h1>
+          <h1 className="title">TVH product search</h1>
         </header>
-        <section className="searchSection">
-          <Search doOnSearch={this.doOnSearch} searchText={searchText} />
-          {usersListSize && (
-            <div className="totalResults">
-              <p>
-                <span>{`We have found ${usersListSize} users for `}</span>
-                <span className="bold">{`"${searchText}"`}</span>
-              </p>
-            </div>
-          )}
+        <section className="uploadSection">
+          <UploadContent />
+          <Camera />
         </section>
         <section className="listSection" onScroll={this.onScroll}>
-          <MyDropzone 
-            onDropDo={this.onDropDo}
-          />
-          <UploadContent />
           {Boolean(users.length) && (
             <UsersList
               users={users}
