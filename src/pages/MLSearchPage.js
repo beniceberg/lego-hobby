@@ -8,7 +8,7 @@ import { getUsersList, getSearch, getUsersListSize } from "../_selectors";
 import UsersList from "../components/UsersList";
 import NoSearchResults from "../components/NoSearchResults";
 import UploadContent from "../components/UploadContent";
-import Camera from "../components/Camera";
+import Camera from "../components/Camera"; 
 
 class MLSearchPage extends Component {
   doUserClick = username => {
@@ -46,6 +46,12 @@ class MLSearchPage extends Component {
             />
           )}
           {usersListSize === 0 && <NoSearchResults searchText={searchText} />}
+        </section>
+        <section className="datashow">
+        <script src="src\pages\DataPage.js"></script>
+        <title></title>
+        <h1>Data details</h1>
+        <table id="product"></table>
         </section>
       </div>
     );
