@@ -31,7 +31,7 @@ const Camera = () => {
       const formData = new FormData();
       formData.append('upload', file, 'image.jpg')
 
-      const url = 'http://localhost:8000/upload'
+      const url = 'https://lego-hobby.ew.r.appspot.com/upload'
       axios.post(url, formData).then(resp => {
         console.log(resp.data);
       });

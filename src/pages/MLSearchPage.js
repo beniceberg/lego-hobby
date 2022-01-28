@@ -47,12 +47,6 @@ class MLSearchPage extends Component {
           )}
           {usersListSize === 0 && <NoSearchResults searchText={searchText} />}
         </section>
-        <section className="datashow">
-        <script src="src\pages\DataPage.js"></script>
-        <title></title>
-        <h1>Data details</h1>
-        <table id="product"></table>
-        </section>
       </div>
     );
   }
