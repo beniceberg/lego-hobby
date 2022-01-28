@@ -63,9 +63,6 @@ class UploadContent extends Component {
     
       return (
         <div>
-            <h1>
-              Accenture
-            </h1>
             <h3>
               File Upload
             </h3>

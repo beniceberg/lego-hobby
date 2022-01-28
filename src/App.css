@@ -15,7 +15,7 @@
 }
 .pageHeader {
   height: 100px;
-  background-color: #24292e;
+  background-color: rgb(117, 0, 192);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -23,6 +23,7 @@
   /* color: hsla(0, 0%, 100%, 0.7); */
   width: 100%;
 }
+
 
 .searchSection {
   padding: 20px;
@@ -170,4 +171,5 @@ input:focus {
 .dropzone {
   /* background-color: aquamarine; */
   height: 50px;
+  display: flex;
 }

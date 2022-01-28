@@ -30,7 +30,7 @@ class MLSearchPage extends Component {
     return (
       <div className="listPage">
         <header className="pageHeader">
-          <h1 className="title">TVH product search</h1>
+          <h1 className="title">Accenture TVH product search </h1>
         </header>
         <section className="uploadSection">
           <UploadContent />
