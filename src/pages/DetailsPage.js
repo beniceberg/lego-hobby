@@ -4,14 +4,12 @@ import { connect } from "react-redux";
 import moment from "moment";
 import _isEmpty from "lodash/isEmpty";
 import { getPartDetails } from "../_selectors";
-import { getGithubPartDetails } from "../_actions";
 import LabelField from "../components/LabelField";
 
 class DetailsPage extends Component {
   componentWillMount() {
     const { match, dispatch, partDetails } = this.props;
     const { username } = match.params;
-    !partDetails && dispatch(getGithubPartDetails(username));
   }
 
   doBackClick = () => {

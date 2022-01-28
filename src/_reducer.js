@@ -5,7 +5,8 @@ import {
   SET_LIST_SIZE,
   UPDATE_USERS_LIST,
   RESET_USERS_LIST_PAGE,
-  INCREMENT_LIST_PAGE
+  INCREMENT_LIST_PAGE,
+  SET_PART_LIST,
 } from "./_actions";
 
 const initialState = {
@@ -13,7 +14,8 @@ const initialState = {
   users: [],
   usersListSize: null,
   userListPage: 1,
-  usersDetails: {}
+  usersDetails: {},
+  parts: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,6 +24,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         search: action.search
+      };
+    case SET_PART_LIST:
+      return {
+        ...state,
+        parts: action.parts,
       };
     case SET_USERS_LIST:
       return {

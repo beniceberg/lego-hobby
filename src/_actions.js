@@ -1,4 +1,5 @@
 // import { history } from "./_utils";
+import axios from 'axios';
 
 export const SET_USERS_LIST = "SET_USERS_LIST";
 export const SET_USER_DETAILS = "SET_USER_DETAILS";
@@ -8,6 +9,7 @@ export const RESET_USERS_LIST_PAGE = "RESET_USERS_LIST_PAGE";
 export const INCREMENT_LIST_PAGE = "INCREMENT_LIST_PAGE";
 export const SET_SEARCH = "SET_SEARCH";
 export const SET_ERROR = "SET_ERROR";
+export const SET_PART_LIST = "SET_PART_LIST";
 
 const setSearch = search => ({
   type: SET_SEARCH,
@@ -31,10 +33,9 @@ const resetUsersListPage = () => ({
 const incrementListPage = () => ({
   type: INCREMENT_LIST_PAGE
 });
-const setPartDetails = partDetails => ({
-  type: SET_USER_DETAILS,
-  partDetails,
-  id: partDetails.login
+const setPartList = parts => ({
+  type: SET_PART_LIST,
+  parts,
 });
 
 export const getGithubUsersList = search => (dispatch, getState) => {
@@ -52,49 +53,16 @@ export const getGithubUsersList = search => (dispatch, getState) => {
     });
 };
 
-export const getGithubPartDetails = username => (dispatch, getState) => {
-  const url = `https://api.github.com/users/${username}`;
-  fetch(url)
-    .then(resp =>
-      resp.json().then(data => Object.assign(data, { status: resp.status }))
-    )
-    .then(body => {
-      if (body.status === 404) {
-        // history.push("/error");
-      } else {
-        dispatch(setPartDetails(body));
-      }
-    })
-    .catch(error => {
-      console.log(error);
-    });
-};
-
-export const getProductDetails = content => (dispatch, getState) => {
-  const url = `https://cloudfunctions/url`;
-  const init = {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    mode: 'no-cors', // no-cors, *cors, same-origin
-    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin', // include, *same-origin, omit
-    headers: {
-      'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    redirect: 'follow', // manual, *follow, error
-    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    body: JSON.stringify({ message: content }) // body data type must match "Content-Type" header
-  }
-  fetch(url, init)
+export const getProductDetails = formData => (dispatch, getState) => {
+  const url = 'https://lego-hobby.ew.r.appspot.com/upload';
+  axios.post(url, formData)
     .then(resp => {
-      return resp.json().then(data => Object.assign(data, { status: resp.status }))
-    }
-    )
-    .then(body => {
-      if (body.status === 404) {
+      console.log(resp.data);
+      if (resp.status === 404) {
+        console.log("Error 404");
         // history.push("/error");
       } else {
-        // dispatch(setPartDetails(body));
+        dispatch(setPartList(resp.data));
       }
     })
     .catch(error => {

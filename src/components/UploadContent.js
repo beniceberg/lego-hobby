@@ -30,7 +30,7 @@ class UploadContent extends Component {
       const url = 'https://lego-hobby.ew.r.appspot.com/upload'
       // const url = 'http://localhost:8000/image-search'
       axios.post(url, formData).then(resp => {
-        console.log(resp.data);
+        console.log(JSON.stringify(resp.data));
       });
     };
     

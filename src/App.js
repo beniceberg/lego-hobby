@@ -4,23 +4,14 @@ import { connect } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
-import LandingPage from "./pages/DataPage";
-import MLSearchPage from "./pages/MLSearchPage";
-import ListPage from "./pages/ListPage";
-import DetailsPage from "./pages/DetailsPage";
-import ErrorPage from "./pages/ErrorPage";
+import SearchPage from "./pages/SearchPage";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<MLSearchPage />} />
-          {/* <Route exact path="/" element={<LandingPage />} />  */}
-          {/* <Route exact path="/list" element={<ListPage />} /> */}
-          {/* <Route exact path="/:part/details" element={<DetailsPage />} />  
-          <Route path="/error" element={<ErrorPage />} />
-          {/* <Redirect from="/*" to="/error" /> */}
+          <Route exact path="/" element={<SearchPage />} />
         </Routes>
       </div>
     );
