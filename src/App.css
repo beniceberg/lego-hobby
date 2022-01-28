@@ -168,6 +168,6 @@ input:focus {
 }
 
 .dropzone {
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
   height: 50px;
 }

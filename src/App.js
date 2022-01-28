@@ -15,10 +15,10 @@ class App extends Component {
     return (
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<LandingPage />} />
-          <Route exact path="/ml-search" element={<MLSearchPage />} />
-          <Route exact path="/list" element={<ListPage />} />
-          <Route exact path="/:part/details" element={<DetailsPage />} />
+        {/* <Route exact path="/" element={<LandingPage />} />  */}
+          <Route exact path="/" element={<MLSearchPage />} />
+          {/* <Route exact path="/list" element={<ListPage />} /> */}
+          {/* <Route exact path="/:part/details" element={<DetailsPage />} />  */}
           <Route path="/error" element={<ErrorPage />} />
           {/* <Redirect from="/*" to="/error" /> */}
         </Routes>

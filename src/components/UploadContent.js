@@ -64,10 +64,10 @@ class UploadContent extends Component {
       return (
         <div>
             <h1>
-              GeeksforGeeks
+              Accenture
             </h1>
             <h3>
-              File Upload using React!
+              File Upload
             </h3>
             <div>
                 <input type="file" onChange={this.onFileChange} />
