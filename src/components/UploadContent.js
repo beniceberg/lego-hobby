@@ -27,7 +27,7 @@ class UploadContent extends Component {
     
       // Request made to the backend api
       // Send formData object
-      const url = 'http://localhost:8000/upload'
+      const url = 'https://lego-hobby.ew.r.appspot.com/upload'
       // const url = 'http://localhost:8000/image-search'
       axios.post(url, formData).then(resp => {
         console.log(resp.data);
