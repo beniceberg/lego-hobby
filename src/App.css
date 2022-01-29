@@ -32,12 +32,49 @@
   width: 100%;
 }
 
+/* Sections */
 
 .searchSection {
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.uploadSection {
+  width: 100%;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.listSection {
+  flex: 1;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Containers */
+
+.searchContainer {
+  padding-top: 20px;
+}
+
+.labelsContainer {
+  
+}
+.labelsContainer div {
+  display: flex;
+  align-items: center;
+}
+.labelsContainer div label {
+  width: 60px;
+}
+.labelsContainer div p {
+  margin: 2px 0
 }
 
 .inputContainer {
@@ -63,41 +100,14 @@
 input:focus {
   outline: none;
 }
-.searchBtn {
-  position: absolute;
-  height: 44px;
-  width: 124px;
-  border-radius: 22px;
-  top: 0;
-  right: -80px;
-  background: url(https://cdn1.iconfinder.com/data/icons/web-and-mobile-ui-outline-icon-kit/512/UI_Icons_2-01-512.png)
-    no-repeat;
-  background-size: 44px 44px;
-  background-position: left center;
-  padding-left: 44px;
-  border: none;
-  font-size: 16px;
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
-  transition: 0.4s all ease;
-  cursor: pointer;
-}
-.searchBtn:hover {
-  transform: translateX(-79px);
-}
 
-.listSection {
-  flex: 1;
-  overflow: hidden;
-  width: 100%;
-}
-
-.usersList {
+.partList {
   margin: 0 auto;
   padding: 0 10px;
   height: 100%;
   overflow: auto;
 }
-.user {
+.part {
   display: flex;
   align-items: center;
   border: 1px solid #d1d5da;
@@ -107,16 +117,16 @@ input:focus {
   margin: 0 auto 16px;
   box-shadow: 0 1px 4px 0 rgba(33, 133, 208, 0.2);
 }
-.user:hover {
+.part:hover {
   cursor: pointer;
 }
-.user .userAvatar {
+.part .partAvatar {
   height: 50px;
   width: 50px;
   border-radius: 50%;
   margin-right: 20px;
 }
-.user .userName {
+.part .partName {
   margin: 0;
 }
 .showMorebtnContainer {
@@ -138,18 +148,6 @@ input:focus {
   height: 25vw;
   /* background-image: url(/assets/github404.png); */
   background-size: cover;
-}
-
-.backBtn {
-  height: 44px;
-  width: 124px;
-  border-radius: 22px;
-  border: none;
-  font-size: 16px;
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
-  cursor: pointer;
-  margin-top: 20px;
-  margin-left: 50px;
 }
 
 .partDetails {
@@ -176,8 +174,93 @@ input:focus {
   margin-right: 10px;
 }
 
-.dropzone {
-  /* background-color: aquamarine; */
-  height: 50px;
-  display: flex;
+/* Buttons */
+
+.tvhBtn {
+  border-radius: 0;
+  border: 1px solid #e5002b;
+  display: inline-block;
+  color: #fff!important;
+  background: #e5002b;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+  font-size: 1.125rem;
+  line-height: 1.4375rem;
+  padding: 12px 24px;
+  outline: 0;
+  font-size: .8125rem;
+  line-height: .8125rem;
+  min-width: 180px;
+}
+.tvhBtn:hover {
+  background: #b30021;
+  border: 1px solid #b30021;
+  color: #fff!important;
+  cursor: pointer;
+}
+
+.tvhBtn.white {
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  transition: all .3s ease-in-out;
+  background-color: #fff;
+  color: #333!important;
+  border: 1px solid #333;
+}
+
+.tvhBtn.white:hover {
+  background: #e6e6e6;
+}
+
+.tvhBtn.white:disabled {
+  background-color: #fff;
+  cursor: default;
+}
+
+.searchBtn {
+  position: absolute;
+  height: 44px;
+  width: 124px;
+  border-radius: 22px;
+  top: 0;
+  right: -80px;
+  background: url(https://cdn1.iconfinder.com/data/icons/web-and-mobile-ui-outline-icon-kit/512/UI_Icons_2-01-512.png)
+    no-repeat;
+  background-size: 44px 44px;
+  background-position: left center;
+  padding-left: 44px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  transition: 0.4s all ease;
+  cursor: pointer;
+}
+.searchBtn:hover {
+  transform: translateX(-79px);
+}
+
+.backBtn {
+  height: 44px;
+  width: 124px;
+  border-radius: 22px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+/* Logos */
+
+.tvhLogo {
+  margin-right: 20px;
+
+}
+
+.title {
+  color: #e5002b;
 }

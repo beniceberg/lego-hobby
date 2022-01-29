@@ -1,6 +1,6 @@
 import React from "react";
 import Webcam from "react-webcam";
-import axios from 'axios';
+import { DataURIToBlob } from "../_utils";
 
 const videoConstraints = {
   width: 1280,
@@ -8,35 +8,16 @@ const videoConstraints = {
   facingMode: "user"
 };
 
-const DataURIToBlob = (dataURI) => {
-  const splitDataURI = dataURI.split(',')
-  const byteString = splitDataURI[0].indexOf('base64') >= 0 ? atob(splitDataURI[1]) : decodeURI(splitDataURI[1])
-  const mimeString = splitDataURI[0].split(':')[1].split(';')[0]
-
-  const ia = new Uint8Array(byteString.length)
-  for (let i = 0; i < byteString.length; i++)
-      ia[i] = byteString.charCodeAt(i)
-
-  return new Blob([ia], { type: mimeString })
-}
-
-const Camera = () => {
+const Camera = ({ onFileSelected }) => {
   const webcamRef = React.useRef(null);
 
   const capture = React.useCallback(
     () => {
       const imageSrc = webcamRef.current.getScreenshot();
-      console.log(imageSrc)
       const file = DataURIToBlob(imageSrc)
-      const formData = new FormData();
-      formData.append('upload', file, 'image.jpg')
-
-      const url = 'https://lego-hobby.ew.r.appspot.com/upload'
-      axios.post(url, formData).then(resp => {
-        console.log(resp.data);
-      });
+      onFileSelected(file);
     },
-    [webcamRef]
+    [webcamRef, onFileSelected]
   );
 
   return (
@@ -51,7 +32,12 @@ const Camera = () => {
         // width={1280}
         videoConstraints={videoConstraints}
       />
-      <button onClick={capture}>Capture photo</button>
+      <button
+        onClick={capture}
+        className="tvhBtn"
+      >
+        Capture photo
+      </button>
     </>
   );
 };
